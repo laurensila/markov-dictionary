@@ -24,12 +24,20 @@ def make_chains(text_string):
         {('hi', 'there'): ['mary', 'juanita'], ('there', 'mary'): ['hi'], ('mary', 'hi': ['there']}
     """
 
-    chains = {}
 
     words = text_string.split() #splitting text string into indiviual word strings
+
+    tuples_of_keys = [] 
+
+    for index in range(len(words)-1):
+        tuples_of_keys.append((words[index], words[index + 1]))
+    print tuples_of_keys
     
-    for index in range(len(words) - 1):
-        print words[index], words[index + 1]
+    chains = {}    
+
+    keys = tuples_of_keys[] 
+
+
     
     # return chains
 
