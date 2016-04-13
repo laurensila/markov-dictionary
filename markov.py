@@ -27,15 +27,28 @@ def make_chains(text_string):
 
     words = text_string.split() #splitting text string into indiviual word strings
 
-    tuples_of_keys = [] 
-
-    for index in range(len(words)-1):
-        tuples_of_keys.append((words[index], words[index + 1]))
-    print tuples_of_keys
-    
     chains = {}    
+    # tuples_of_keys = [] 
+    list_of_values = []
 
-    keys = tuples_of_keys[] 
+    for index in range(len(words)-2):
+        tuples_of_keys = (words[index], words[index + 1])
+        values = words[index + 2]
+
+        chains[tuples_of_keys] = values
+
+        if values not in list_of_values:
+            list_of_values.append(values)
+        else: 
+            print "blah"
+    
+    
+
+    print list_of_values
+
+
+    print chains
+
 
 
     
