@@ -28,24 +28,16 @@ def make_chains(text_string):
     words = text_string.split() #splitting text string into indiviual word strings
 
     chains = {}    
-    # tuples_of_keys = [] 
-    list_of_values = []
 
     for index in range(len(words)-2):
-        tuples_of_keys = (words[index], words[index + 1])
-        values = words[index + 2]
+        tuples_of_keys = words[index], words[index + 1]
+        third_word = words[index + 2]
 
-        chains[tuples_of_keys] = values
-
-        if values not in list_of_values:
-            list_of_values.append(values)
+        if tuples_of_keys in chains:
+            chains[tuples_of_keys].append(third_word)
         else: 
-            print "blah"
+            chains[tuples_of_keys] = [third_word]
     
-    
-
-    print list_of_values
-
 
     print chains
 
