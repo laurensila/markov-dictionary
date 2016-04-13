@@ -30,21 +30,17 @@ def make_chains(text_string):
     chains = {}    
 
     for index in range(len(words)-2):
-        tuples_of_keys = words[index], words[index + 1]
-        third_word = words[index + 2]
+        keys = words[index], words[index + 1]
+        value = words[index + 2]
 
-        if tuples_of_keys in chains:
-            chains[tuples_of_keys].append(third_word)
+        if keys in chains:
+            chains[keys].append(value)
         else: 
-            chains[tuples_of_keys] = [third_word]
+            chains[keys] = [value]
     
 
     print chains
-
-
-
-    
-    # return chains
+    return chains
 
 
 
@@ -53,9 +49,37 @@ def make_text(chains):
 
     text = ""
 
-    # your code goes here
+    import random
 
-    return text
+    random_key = random.choice(chains.keys())
+
+
+    if random_key in chains.keys():
+        print random_key
+        print chains[random_key]
+
+    random_value = random.choice(random_key)
+    print random_value
+
+
+    #random_value = random.choice(chains.value())
+
+        
+
+    # print new_key
+
+    #ex:
+    #current_key = ('in', 'a') : [ 'house?', 'box']
+    #chosen_word = 'house?'
+    #new_key = ('a', 'chosen_word')
+
+
+    #variable new_key = key[1] + random value
+
+    # return text
+
+
+
 
 
 input_path = "green-eggs.txt"
