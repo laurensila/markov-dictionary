@@ -47,39 +47,35 @@ def make_chains(text_string):
 def make_text(chains):
     """Takes dictionary of markov chains; returns random text."""
 
-    text = ""
-
-    import random
-
-    random_key = random.choice(chains.keys())
 
 
-    if random_key in chains.keys():
-        print random_key
-        print chains[random_key]
-
-    random_value = random.choice(random_key)
-    print random_value
+    # random_key = choice(chains.keys())
 
 
-    #random_value = random.choice(chains.value())
+    # if random_key in chains.keys():
+    #     print random_key
+    #     print chains[random_key]
 
-        
+    #     random_value = choice(chains[random_key])
 
-    # print new_key
+    #     brand_new_key = ()
+    # return " ".join()
 
-    #ex:
-    #current_key = ('in', 'a') : [ 'house?', 'box']
-    #chosen_word = 'house?'
-    #new_key = ('a', 'chosen_word')
+    key = choice(chains.keys())
+    words = [key[0], key[1]]
 
+    while key in chains:
+        # Keep looping until we have a key that isn't in the chains
+        # (which would mean it was the end of our original text)
+        #
+        # Note that for long texts (like a full book), this might mean
+        # it would run for a very long time.
 
-    #variable new_key = key[1] + random value
+        word = choice(chains[key])
+        words.append(word)
+        key = (key[1], word)
 
-    # return text
-
-
-
+    return " ".join(words)
 
 
 input_path = "green-eggs.txt"
